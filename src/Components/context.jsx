@@ -5,19 +5,45 @@ import { v4 as uuidv4 } from "uuid";
 
 export const CartContext = createContext({});
 
+
+const mockEmployees = [
+  {
+    id: 0,
+    name: "mock",
+    lastname: 'mocklastname',
+    position: "Manager"
+  },
+  {
+    id: 1,
+    name: "employee 1",
+    lastname: "em",
+    position: "Engineer"
+  },
+  {
+    id: 2,
+    name: "employee 2",
+    lastname: "lord",
+    position: "Designer"
+  },
+  
+]
+
+
 export function CartContextProvider({ children }) {
 
   const [reload, setReload] = useState(false);
-  const [members , setMembers] = useState([])
+  const [members , setMembers] = useState(mockEmployees)
   
-
+ 
 
   useEffect(() => {
     const getData = async () => {
       const response = await axios.get(
         "https://jsd5-mock-backend.onrender.com/members"
       );
-      setMembers(response.data);
+      setMembers((prevdata) => {
+        return [...response.data, ...prevdata];
+      });
       console.log(response.data);
     };
     getData();

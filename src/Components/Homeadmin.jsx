@@ -1,14 +1,12 @@
-import { useState, useEffect } from "react";
-import Homenormal from "./Homenormal";
-import axios from "axios";
-import { v4 as uuidv4 } from "uuid";
+import { useState, } from "react";
 import { useContext } from "react";
 import { CartContext } from "./context";
+import Button from "./Button";
+import Layout from "./Layout";
+
 
 const Homeadmin = () => {
-
-
-  const { members, createData , Del } = useContext(CartContext);
+  const { members, createData, Del } = useContext(CartContext);
 
   const [name, setName] = useState("");
   const [lastname, setLastname] = useState("");
@@ -22,8 +20,13 @@ const Homeadmin = () => {
   };
 
   return (
+    <Layout>
     <div className="p-6">
-      <Homenormal />
+      <h1 className="text-3xl font-semibold">
+        Generation Thailand <br /> Home - Admin Sector
+      </h1>
+
+      <Button />
       <div className="bg-white p-6 rounded-lg shadow-md">
         <div className="flex flex-col space-y-4">
           <div>
@@ -90,6 +93,7 @@ const Homeadmin = () => {
         ))}
       </table>
     </div>
+    </Layout>
   );
 };
 

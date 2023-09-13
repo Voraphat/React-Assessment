@@ -1,6 +1,8 @@
 import Homenormal from "./Homenormal";
 import { useEffect, useState, useContext } from "react";
 import { CartContext } from "./context";
+import Button from "./Button";
+import Layout from "./Layout";
 
 const Homeuser = () => {
   // const [members, setMembers] = useState([]);
@@ -8,9 +10,12 @@ const Homeuser = () => {
   const { members } = useContext(CartContext);
 
   return (
+    <Layout>
     <div className="p-6">
-      <Homenormal />
-
+      <h1 className="text-3xl font-semibold">
+        Generation Thailand <br /> Home - User Sector
+      </h1>
+      <Button/>
       <table className="mt-4 w-full bg-white border border-gray-300 shadow-md">
         <thead>
           <tr className="bg-gray-100">
@@ -31,6 +36,7 @@ const Homeuser = () => {
         ))}
       </table>
     </div>
+    </Layout>
   );
 };
 

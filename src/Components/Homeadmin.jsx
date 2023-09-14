@@ -14,6 +14,10 @@ const Homeadmin = () => {
   const [position, setPosition] = useState("");
 
   const handleCreateData = async () => {
+    if (name.trim() === "" || lastname.trim() === "" || position.trim() === "") {
+      alert("กรอกข้อมูล");
+      return;
+    }
     await createData(name, lastname, position);
     setName("");
     setLastname("");

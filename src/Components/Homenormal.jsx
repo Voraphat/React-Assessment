@@ -15,6 +15,7 @@ const Homenormal = ({data}) => {
 
         <div className="mt-8 flex justify-center space-x-4">
 
+
           <Button data={data} />
           
         </div>

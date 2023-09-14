@@ -84,7 +84,7 @@ const Homeadmin = () => {
               <td className="py-2 px-4">{member.lastname}</td>
               <td className="py-2 px-4">{member.position}</td>
               <td className="py-2 px-4">
-                <button className="mx-5" onClick={() => Del(member.id)}>
+                <button className="mx-5 text-red-500 " onClick={() => Del(member.id)}>
                   Delete
                 </button>
               </td>

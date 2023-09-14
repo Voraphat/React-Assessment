@@ -2,6 +2,8 @@ import './App.css'
 import Homenormal from './Components/Homenormal'
 
 function App() {
+
+
   const mockEmployees = [
     {
       id: 0,
@@ -23,6 +25,7 @@ function App() {
     },
     
   ]
+  
   
   return (
     <>

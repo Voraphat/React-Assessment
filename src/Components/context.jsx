@@ -61,10 +61,10 @@ export function CartContextProvider({ children }) {
       }
     );
     if (response.status === 200) {
-      console.log("ok");
+      alert("Create : Create success");
       setReload(!reload);
     } else {
-      console.log("not ok");
+      alert("Create : Create failed");
     }
   };
 
@@ -74,8 +74,10 @@ export function CartContextProvider({ children }) {
       `https://jsd5-mock-backend.onrender.com/member/${id}`
     );
     if (response.status === 200 && response.data) {
-      console.log("del ok");
+      alert("Delete : Delete success");
       setReload(!reload);
+    }else {
+      alert("Delete : Delete failed");
     }
   };
 

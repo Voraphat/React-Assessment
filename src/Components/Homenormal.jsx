@@ -2,8 +2,6 @@ import Button from "./Button";
 import Layout from "./Layout";
 
 
-
-
 const Homenormal = ({data}) => {
   
   return (

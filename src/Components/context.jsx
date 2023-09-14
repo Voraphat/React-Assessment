@@ -34,7 +34,7 @@ export function CartContextProvider({ children }) {
   const [reload, setReload] = useState(false);
   const [members , setMembers] = useState(mockEmployees)
   
- 
+
 
   useEffect(() => {
     const getData = async () => {
@@ -48,6 +48,7 @@ export function CartContextProvider({ children }) {
     };
     getData();
   }, [reload]);
+
 
   const createData = async (name, lastname, position) => {
     const response = await axios.post(
@@ -66,6 +67,7 @@ export function CartContextProvider({ children }) {
       console.log("not ok");
     }
   };
+
 
   const Del = async (id) => {
     const response = await axios.delete(

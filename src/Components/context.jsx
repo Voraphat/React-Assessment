@@ -70,14 +70,19 @@ export function CartContextProvider({ children }) {
 
 
   const Del = async (id) => {
-    const response = await axios.delete(
-      `https://jsd5-mock-backend.onrender.com/member/${id}`
-    );
-    if (response.status === 200 && response.data) {
-      alert("Delete : Delete success");
-      setReload(!reload);
-    }else {
-      alert("Delete : Delete failed");
+    try {
+      const response = await axios.delete(
+        `https://jsd5-mock-backend.onrender.com/member/${id}`
+      );
+      if (response.status === 200 && response.data) {
+        alert("Delete : Delete success");
+        setMembers((prevMembers) => prevMembers.filter((member) => member.id !== id));
+      } else {
+        alert("Delete : Delete failed");
+        setReload(!reload);
+      }
+    } catch (error) {
+      console.error("Error deleting data:", error);
     }
   };
 
